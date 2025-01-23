@@ -1361,6 +1361,12 @@
           "title": "Electron path"
         }
       },
+      "locale_override": {
+        "label": {
+          "description": "Allows overriding browser default locale",
+          "title": "Locale override"
+        }
+      },
       "flavor": {
         "label": {
           "info": "After changing this setting go to the \"About\" page and check for a webUI update and install it",

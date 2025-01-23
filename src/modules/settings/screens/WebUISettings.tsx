@@ -40,6 +40,7 @@ type WebUISettingsType = Pick<
     | 'initialOpenInBrowserEnabled'
     | 'webUIInterface'
     | 'electronPath'
+    | 'localeOverride'
     | 'webUIChannel'
     | 'webUIUpdateCheckInterval'
 >;
@@ -114,6 +115,7 @@ const extractWebUISettings = (settings: ServerSettings): WebUISettingsType => ({
     initialOpenInBrowserEnabled: settings.initialOpenInBrowserEnabled,
     webUIInterface: settings.webUIInterface,
     electronPath: settings.electronPath,
+    localeOverride: settings.localeOverride,
     webUIChannel: settings.webUIChannel,
     webUIUpdateCheckInterval: settings.webUIUpdateCheckInterval,
 });
@@ -225,6 +227,15 @@ export const WebUISettings = () => {
                     webUISettings.electronPath.length ? webUISettings.electronPath : t('global.label.default')
                 }
                 handleChange={(path) => updateSetting('electronPath', path)}
+            />
+            <TextSetting
+                settingName={t('settings.webui.locale_override.label.title')}
+                dialogDescription={t('settings.webui.locale_override.label.description')}
+                value={webUISettings.localeOverride}
+                settingDescription={
+                    webUISettings.localeOverride ? webUISettings.localeOverride : t('global.label.default')
+                }
+                handleChange={(locale) => updateSetting('localeOverride', locale)}
             />
             <SelectSetting<WebUiChannel>
                 settingName={t('settings.webui.channel.label.title')}

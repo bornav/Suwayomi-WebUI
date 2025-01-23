@@ -9,8 +9,8 @@
 import dayjs, { Dayjs } from 'dayjs';
 import { t } from 'i18next';
 
-export const timeFormatter = new Intl.DateTimeFormat(navigator.language, { hour: '2-digit', minute: '2-digit' });
-export const dateFormatter = new Intl.DateTimeFormat(navigator.language, {
+export const timeFormatter = new Intl.DateTimeFormat(getLanguageOrDefault(), { hour: '2-digit', minute: '2-digit' });
+export const dateFormatter = new Intl.DateTimeFormat(getLanguageOrDefault(), {
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
